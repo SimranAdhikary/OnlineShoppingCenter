@@ -1,0 +1,297 @@
+/* ==========================================================
+   OnlineShoppingCenter - Blue & White Theme
+   Replace the contents of wwwroot/css/site.css with this file
+   ========================================================== */
+
+:root[b-n0o159tq3k] {
+    --osc-primary: #1565c0;
+    --osc-primary-dark: #0d47a1;
+    --osc-primary-light: #e3f2fd;
+    --osc-accent: #42a5f5;
+    --osc-white: #ffffff;
+    --osc-bg: #f5f9ff;
+    --osc-text: #1a2b42;
+    --osc-muted: #6b7c93;
+    --osc-border: #d6e4f5;
+    --osc-radius: 0.5rem;
+    --osc-shadow: 0 4px 14px rgba(21, 101, 192, 0.12);
+}
+
+html[b-n0o159tq3k] {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html[b-n0o159tq3k] {
+        font-size: 16px;
+    }
+}
+
+body[b-n0o159tq3k] {
+    margin-bottom: 60px;
+    background-color: var(--osc-bg);
+    color: var(--osc-text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Links & headings ---------- */
+a[b-n0o159tq3k] {
+    color: var(--osc-primary);
+    text-decoration: none;
+}
+
+    a:hover[b-n0o159tq3k] {
+        color: var(--osc-primary-dark);
+        text-decoration: underline;
+    }
+
+h1[b-n0o159tq3k], h2[b-n0o159tq3k], h3[b-n0o159tq3k], h4[b-n0o159tq3k], h5[b-n0o159tq3k], h6[b-n0o159tq3k] {
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.navbar[b-n0o159tq3k] {
+    background: linear-gradient(90deg, var(--osc-primary-dark), var(--osc-primary)) !important;
+    border-bottom: none !important;
+    box-shadow: var(--osc-shadow);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+a.navbar-brand[b-n0o159tq3k] {
+    color: var(--osc-white) !important;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.3px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+    a.navbar-brand:hover[b-n0o159tq3k] {
+        text-decoration: none;
+        color: var(--osc-primary-light) !important;
+    }
+
+.navbar .nav-link[b-n0o159tq3k],
+.navbar .nav-link.text-dark[b-n0o159tq3k] {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--osc-radius);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+    .navbar .nav-link:hover[b-n0o159tq3k],
+    .navbar .nav-link:focus[b-n0o159tq3k] {
+        color: var(--osc-white) !important;
+        background-color: rgba(255, 255, 255, 0.15);
+        text-decoration: none;
+    }
+
+/* Mobile toggle button */
+.navbar-toggler[b-n0o159tq3k] {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-toggler-icon[b-n0o159tq3k] {
+    filter: invert(1) brightness(2);
+}
+
+/* ---------- Right-aligned items (Register / Sign In) ---------- */
+.navbar-nav > .right-nav-item[b-n0o159tq3k] {
+    list-style: none;
+}
+
+/* First right item pushes itself and the next one to the far right */
+.navbar-nav > .nav-item + .right-nav-item[b-n0o159tq3k] {
+    margin-left: auto;
+}
+
+/* Register: outlined white button */
+.right-nav-item .nav-link[b-n0o159tq3k] {
+    margin-left: 0.35rem;
+}
+
+.right-nav-item:nth-last-child(2) .nav-link[b-n0o159tq3k] {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Sign In: solid white button */
+.right-nav-item:last-child .nav-link[b-n0o159tq3k] {
+    background-color: var(--osc-white);
+    color: var(--osc-primary) !important;
+    font-weight: 600;
+}
+
+    .right-nav-item:last-child .nav-link:hover[b-n0o159tq3k] {
+        background-color: var(--osc-primary-light);
+        color: var(--osc-primary-dark) !important;
+    }
+
+/* On mobile, stack the buttons normally */
+@media (max-width: 575.98px) {
+    .navbar-nav > .nav-item + .right-nav-item[b-n0o159tq3k] {
+        margin-left: 0;
+    }
+
+    .right-nav-item .nav-link[b-n0o159tq3k] {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
+
+/* ---------- Main content ---------- */
+main[role="main"][b-n0o159tq3k] {
+    background-color: var(--osc-white);
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    box-shadow: var(--osc-shadow);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary[b-n0o159tq3k] {
+    color: var(--osc-white);
+    background-color: var(--osc-primary);
+    border-color: var(--osc-primary);
+    border-radius: var(--osc-radius);
+    font-weight: 500;
+}
+
+    .btn-primary:hover[b-n0o159tq3k],
+    .btn-primary:focus[b-n0o159tq3k],
+    .btn-primary:active[b-n0o159tq3k] {
+        color: var(--osc-white);
+        background-color: var(--osc-primary-dark);
+        border-color: var(--osc-primary-dark);
+    }
+
+.btn-outline-primary[b-n0o159tq3k] {
+    color: var(--osc-primary);
+    border-color: var(--osc-primary);
+    border-radius: var(--osc-radius);
+}
+
+    .btn-outline-primary:hover[b-n0o159tq3k] {
+        color: var(--osc-white);
+        background-color: var(--osc-primary);
+        border-color: var(--osc-primary);
+    }
+
+.btn:focus[b-n0o159tq3k],
+.btn:active:focus[b-n0o159tq3k],
+.btn-link.nav-link:focus[b-n0o159tq3k],
+.form-control:focus[b-n0o159tq3k],
+.form-check-input:focus[b-n0o159tq3k] {
+    box-shadow: 0 0 0 0.15rem var(--osc-white), 0 0 0 0.3rem rgba(66, 165, 245, 0.55);
+}
+
+/* ---------- Forms (Register / Sign In pages) ---------- */
+.form-control[b-n0o159tq3k],
+.form-select[b-n0o159tq3k] {
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+}
+
+    .form-control:focus[b-n0o159tq3k],
+    .form-select:focus[b-n0o159tq3k] {
+        border-color: var(--osc-accent);
+    }
+
+label[b-n0o159tq3k],
+.form-label[b-n0o159tq3k] {
+    color: var(--osc-primary-dark);
+    font-weight: 500;
+}
+
+.text-danger[b-n0o159tq3k] {
+    font-size: 0.875rem;
+}
+
+/* ---------- Cards (product listings) ---------- */
+.card[b-n0o159tq3k] {
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card:hover[b-n0o159tq3k] {
+        transform: translateY(-3px);
+        box-shadow: var(--osc-shadow);
+    }
+
+.card-header[b-n0o159tq3k] {
+    background-color: var(--osc-primary-light);
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+    border-bottom: 1px solid var(--osc-border);
+}
+
+/* ---------- Tables ---------- */
+.table thead th[b-n0o159tq3k] {
+    background-color: var(--osc-primary);
+    color: var(--osc-white);
+    border-color: var(--osc-primary);
+}
+
+.table-hover tbody tr:hover[b-n0o159tq3k] {
+    background-color: var(--osc-primary-light);
+}
+
+/* ---------- Pills / badges / alerts ---------- */
+.nav-pills .nav-link.active[b-n0o159tq3k],
+.nav-pills .show > .nav-link[b-n0o159tq3k] {
+    color: var(--osc-white);
+    background-color: var(--osc-primary);
+    border-color: var(--osc-primary-dark);
+}
+
+.badge.bg-primary[b-n0o159tq3k] {
+    background-color: var(--osc-primary) !important;
+}
+
+.alert-primary[b-n0o159tq3k],
+.alert-info[b-n0o159tq3k] {
+    background-color: var(--osc-primary-light);
+    border-color: var(--osc-border);
+    color: var(--osc-primary-dark);
+}
+
+/* ---------- Utilities kept from the default template ---------- */
+.border-top[b-n0o159tq3k] {
+    border-top: 1px solid var(--osc-border) !important;
+}
+
+.border-bottom[b-n0o159tq3k] {
+    border-bottom: 1px solid var(--osc-border) !important;
+}
+
+.box-shadow[b-n0o159tq3k] {
+    box-shadow: var(--osc-shadow);
+}
+
+button.accept-policy[b-n0o159tq3k] {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* ---------- Footer ---------- */
+.footer[b-n0o159tq3k] {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: var(--osc-white);
+    color: var(--osc-muted) !important;
+    border-top: 3px solid var(--osc-primary) !important;
+}
+
+    .footer a[b-n0o159tq3k] {
+        color: var(--osc-primary);
+    }

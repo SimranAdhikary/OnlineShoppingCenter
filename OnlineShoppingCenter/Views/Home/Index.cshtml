@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var categories = new[]
+    {
+        new { Name = "Electronics", Icon = "💻" },
+        new { Name = "Fashion",     Icon = "👕" },
+        new { Name = "Home & Kitchen", Icon = "🏠" },
+        new { Name = "Beauty",      Icon = "💄" },
+        new { Name = "Sports",      Icon = "⚽" },
+        new { Name = "Books",       Icon = "📚" }
+    };
+
+    var products = new[]
+    {
+        new { Name = "Wireless Headphones", Price = 3499m, OldPrice = 4999m, Icon = "🎧", Badge = "Sale" },
+        new { Name = "Smart Watch",         Price = 5999m, OldPrice = 0m,    Icon = "⌚", Badge = "New" },
+        new { Name = "Running Shoes",       Price = 2799m, OldPrice = 3499m, Icon = "👟", Badge = "Sale" },
+        new { Name = "Backpack",            Price = 1899m, OldPrice = 0m,    Icon = "🎒", Badge = "" },
+        new { Name = "Coffee Maker",        Price = 4299m, OldPrice = 5299m, Icon = "☕", Badge = "Sale" },
+        new { Name = "Bluetooth Speaker",   Price = 2499m, OldPrice = 0m,    Icon = "🔊", Badge = "New" },
+        new { Name = "Sunglasses",          Price = 999m,  OldPrice = 1499m, Icon = "🕶️", Badge = "Sale" },
+        new { Name = "Desk Lamp",           Price = 1299m, OldPrice = 0m,    Icon = "💡", Badge = "" }
+    };
+}
+
+<!-- ============ HERO ============ -->
+<section class="osc-hero">
+    <div class="osc-hero-content">
+        <span class="osc-hero-tag">Big Season Sale</span>
+        <h1>Shop smarter at <br />OnlineShoppingCenter</h1>
+        <p>Thousands of products, great prices and fast delivery, all in one place.</p>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="#featured" class="btn btn-light btn-lg osc-btn-hero">Shop Now</a>
+            <a asp-controller="Home" asp-action="Register" class="btn btn-outline-light btn-lg">Create Account</a>
+        </div>
+    </div>
+    <div class="osc-hero-art" aria-hidden="true">🛍️</div>
+</section>
+
+<!-- ============ PERKS ============ -->
+<section class="osc-perks">
+    <div class="osc-perk"><span>🚚</span><div><strong>Free Delivery</strong><small>On orders over Rs. 3,000</small></div></div>
+    <div class="osc-perk"><span>🔒</span><div><strong>Secure Payment</strong><small>100% protected checkout</small></div></div>
+    <div class="osc-perk"><span>↩️</span><div><strong>Easy Returns</strong><small>7-day return policy</small></div></div>
+    <div class="osc-perk"><span>🎧</span><div><strong>24/7 Support</strong><small>We're always here to help</small></div></div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="osc-section">
+    <div class="osc-section-head">
+        <h2>Shop by Category</h2>
+    </div>
+    <div class="osc-categories">
+        @foreach (var c in categories)
+        {
+            <a href="#" class="osc-category">
+                <span class="osc-category-icon">@c.Icon</span>
+                <span>@c.Name</span>
+            </a>
+        }
+    </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="osc-section" id="featured">
+    <div class="osc-section-head">
+        <h2>Featured Products</h2>
+        <a href="#">View all →</a>
+    </div>
+    <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4">
+        @foreach (var p in products)
+        {
+            <div class="col">
+                <div class="card osc-product h-100">
+                    <div class="osc-product-img">
+                        @if (!string.IsNullOrEmpty(p.Badge))
+                        {
+                            <span class="osc-badge @(p.Badge == "Sale" ? "osc-badge-sale" : "osc-badge-new")">@p.Badge</span>
+                        }
+                        <span class="osc-product-emoji">@p.Icon</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="osc-product-name">@p.Name</h3>
+                        <div class="osc-price mb-3">
+                            <span class="osc-price-now">Rs. @p.Price.ToString("N0")</span>
+                            @if (p.OldPrice > 0)
+                            {
+                                <span class="osc-price-old">Rs. @p.OldPrice.ToString("N0")</span>
+                            }
+                        </div>
+                        <button type="button" class="btn btn-primary mt-auto w-100">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- ============ PROMO BANNER ============ -->
+<section class="osc-promo">
+    <div>
+        <h2>Get 10% off your first order</h2>
+        <p>Register today and enjoy exclusive deals made for new members.</p>
+    </div>
+    <a asp-controller="Home" asp-action="Register" class="btn btn-light btn-lg osc-btn-hero">Register Now</a>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="osc-newsletter">
+    <h2>Stay in the loop</h2>
+    <p>Subscribe for new arrivals and special offers.</p>
+    <form class="osc-newsletter-form" onsubmit="return false;">
+        <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+</section>

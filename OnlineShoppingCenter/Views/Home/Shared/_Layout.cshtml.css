@@ -1,0 +1,297 @@
+﻿/* ==========================================================
+   OnlineShoppingCenter - Blue & White Theme
+   Replace the contents of wwwroot/css/site.css with this file
+   ========================================================== */
+
+:root {
+    --osc-primary: #1565c0;
+    --osc-primary-dark: #0d47a1;
+    --osc-primary-light: #e3f2fd;
+    --osc-accent: #42a5f5;
+    --osc-white: #ffffff;
+    --osc-bg: #f5f9ff;
+    --osc-text: #1a2b42;
+    --osc-muted: #6b7c93;
+    --osc-border: #d6e4f5;
+    --osc-radius: 0.5rem;
+    --osc-shadow: 0 4px 14px rgba(21, 101, 192, 0.12);
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--osc-bg);
+    color: var(--osc-text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Links & headings ---------- */
+a {
+    color: var(--osc-primary);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--osc-primary-dark);
+        text-decoration: underline;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: linear-gradient(90deg, var(--osc-primary-dark), var(--osc-primary)) !important;
+    border-bottom: none !important;
+    box-shadow: var(--osc-shadow);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+a.navbar-brand {
+    color: var(--osc-white) !important;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.3px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+    a.navbar-brand:hover {
+        text-decoration: none;
+        color: var(--osc-primary-light) !important;
+    }
+
+.navbar .nav-link,
+.navbar .nav-link.text-dark {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--osc-radius);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+        color: var(--osc-white) !important;
+        background-color: rgba(255, 255, 255, 0.15);
+        text-decoration: none;
+    }
+
+/* Mobile toggle button */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+
+/* ---------- Right-aligned items (Register / Sign In) ---------- */
+.navbar-nav > .right-nav-item {
+    list-style: none;
+}
+
+/* First right item pushes itself and the next one to the far right */
+.navbar-nav > .nav-item + .right-nav-item {
+    margin-left: auto;
+}
+
+/* Register: outlined white button */
+.right-nav-item .nav-link {
+    margin-left: 0.35rem;
+}
+
+.right-nav-item:nth-last-child(2) .nav-link {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Sign In: solid white button */
+.right-nav-item:last-child .nav-link {
+    background-color: var(--osc-white);
+    color: var(--osc-primary) !important;
+    font-weight: 600;
+}
+
+    .right-nav-item:last-child .nav-link:hover {
+        background-color: var(--osc-primary-light);
+        color: var(--osc-primary-dark) !important;
+    }
+
+/* On mobile, stack the buttons normally */
+@media (max-width: 575.98px) {
+    .navbar-nav > .nav-item + .right-nav-item {
+        margin-left: 0;
+    }
+
+    .right-nav-item .nav-link {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
+
+/* ---------- Main content ---------- */
+main[role="main"] {
+    background-color: var(--osc-white);
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    box-shadow: var(--osc-shadow);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    color: var(--osc-white);
+    background-color: var(--osc-primary);
+    border-color: var(--osc-primary);
+    border-radius: var(--osc-radius);
+    font-weight: 500;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+        color: var(--osc-white);
+        background-color: var(--osc-primary-dark);
+        border-color: var(--osc-primary-dark);
+    }
+
+.btn-outline-primary {
+    color: var(--osc-primary);
+    border-color: var(--osc-primary);
+    border-radius: var(--osc-radius);
+}
+
+    .btn-outline-primary:hover {
+        color: var(--osc-white);
+        background-color: var(--osc-primary);
+        border-color: var(--osc-primary);
+    }
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.15rem var(--osc-white), 0 0 0 0.3rem rgba(66, 165, 245, 0.55);
+}
+
+/* ---------- Forms (Register / Sign In pages) ---------- */
+.form-control,
+.form-select {
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--osc-accent);
+    }
+
+label,
+.form-label {
+    color: var(--osc-primary-dark);
+    font-weight: 500;
+}
+
+.text-danger {
+    font-size: 0.875rem;
+}
+
+/* ---------- Cards (product listings) ---------- */
+.card {
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--osc-shadow);
+    }
+
+.card-header {
+    background-color: var(--osc-primary-light);
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+    border-bottom: 1px solid var(--osc-border);
+}
+
+/* ---------- Tables ---------- */
+.table thead th {
+    background-color: var(--osc-primary);
+    color: var(--osc-white);
+    border-color: var(--osc-primary);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--osc-primary-light);
+}
+
+/* ---------- Pills / badges / alerts ---------- */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: var(--osc-white);
+    background-color: var(--osc-primary);
+    border-color: var(--osc-primary-dark);
+}
+
+.badge.bg-primary {
+    background-color: var(--osc-primary) !important;
+}
+
+.alert-primary,
+.alert-info {
+    background-color: var(--osc-primary-light);
+    border-color: var(--osc-border);
+    color: var(--osc-primary-dark);
+}
+
+/* ---------- Utilities kept from the default template ---------- */
+.border-top {
+    border-top: 1px solid var(--osc-border) !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--osc-border) !important;
+}
+
+.box-shadow {
+    box-shadow: var(--osc-shadow);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: var(--osc-white);
+    color: var(--osc-muted) !important;
+    border-top: 3px solid var(--osc-primary) !important;
+}
+
+    .footer a {
+        color: var(--osc-primary);
+    }

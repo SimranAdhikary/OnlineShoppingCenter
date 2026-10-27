@@ -1,0 +1,633 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}*/
+
+/* ==========================================================
+   OnlineShoppingCenter - Blue & White Theme
+   ========================================================== */
+
+:root {
+    --osc-primary: #1565c0;
+    --osc-primary-dark: #0d47a1;
+    --osc-primary-light: #e3f2fd;
+    --osc-accent: #42a5f5;
+    --osc-white: #ffffff;
+    --osc-bg: #f5f9ff;
+    --osc-text: #1a2b42;
+    --osc-muted: #6b7c93;
+    --osc-border: #d6e4f5;
+    --osc-radius: 0.5rem;
+    --osc-shadow: 0 4px 14px rgba(21, 101, 192, 0.12);
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--osc-bg);
+    color: var(--osc-text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Links & headings ---------- */
+a {
+    color: var(--osc-primary);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--osc-primary-dark);
+        text-decoration: underline;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: linear-gradient(90deg, var(--osc-primary-dark), var(--osc-primary)) !important;
+    border-bottom: none !important;
+    box-shadow: var(--osc-shadow);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+a.navbar-brand {
+    color: var(--osc-white) !important;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.3px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+    a.navbar-brand:hover {
+        text-decoration: none;
+        color: var(--osc-primary-light) !important;
+    }
+
+.navbar .nav-link,
+.navbar .nav-link.text-dark {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--osc-radius);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+        color: var(--osc-white) !important;
+        background-color: rgba(255, 255, 255, 0.15);
+        text-decoration: none;
+    }
+
+/* Mobile toggle button */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+
+/* ---------- Right-aligned items (Register / Sign In) ---------- */
+.navbar-nav > .right-nav-item {
+    list-style: none;
+}
+
+/* First right item pushes itself and the next one to the far right */
+.navbar-nav > .nav-item + .right-nav-item {
+    margin-left: auto;
+}
+
+/* Register: outlined white button */
+.right-nav-item .nav-link {
+    margin-left: 0.35rem;
+}
+
+.right-nav-item:nth-last-child(2) .nav-link {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Sign In: solid white button */
+.right-nav-item:last-child .nav-link {
+    background-color: var(--osc-white);
+    color: var(--osc-primary) !important;
+    font-weight: 600;
+}
+
+    .right-nav-item:last-child .nav-link:hover {
+        background-color: var(--osc-primary-light);
+        color: var(--osc-primary-dark) !important;
+    }
+
+/* On mobile, stack the buttons normally */
+@media (max-width: 575.98px) {
+    .navbar-nav > .nav-item + .right-nav-item {
+        margin-left: 0;
+    }
+
+    .right-nav-item .nav-link {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
+
+/* ---------- Main content ---------- */
+main[role="main"] {
+    background-color: var(--osc-white);
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    box-shadow: var(--osc-shadow);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    color: var(--osc-white);
+    background-color: var(--osc-primary);
+    border-color: var(--osc-primary);
+    border-radius: var(--osc-radius);
+    font-weight: 500;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+        color: var(--osc-white);
+        background-color: var(--osc-primary-dark);
+        border-color: var(--osc-primary-dark);
+    }
+
+.btn-outline-primary {
+    color: var(--osc-primary);
+    border-color: var(--osc-primary);
+    border-radius: var(--osc-radius);
+}
+
+    .btn-outline-primary:hover {
+        color: var(--osc-white);
+        background-color: var(--osc-primary);
+        border-color: var(--osc-primary);
+    }
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.15rem var(--osc-white), 0 0 0 0.3rem rgba(66, 165, 245, 0.55);
+}
+
+/* ---------- Forms (Register / Sign In pages) ---------- */
+.form-control,
+.form-select {
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--osc-accent);
+    }
+
+label,
+.form-label {
+    color: var(--osc-primary-dark);
+    font-weight: 500;
+}
+
+.text-danger {
+    font-size: 0.875rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    box-shadow: 0 2px 8px rgba(21, 101, 192, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--osc-shadow);
+    }
+
+.card-header {
+    background-color: var(--osc-primary-light);
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+    border-bottom: 1px solid var(--osc-border);
+}
+
+/* ---------- Tables ---------- */
+.table thead th {
+    background-color: var(--osc-primary);
+    color: var(--osc-white);
+    border-color: var(--osc-primary);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--osc-primary-light);
+}
+
+/* ---------- Pills / badges / alerts ---------- */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: var(--osc-white);
+    background-color: var(--osc-primary);
+    border-color: var(--osc-primary-dark);
+}
+
+.badge.bg-primary {
+    background-color: var(--osc-primary) !important;
+}
+
+.alert-primary,
+.alert-info {
+    background-color: var(--osc-primary-light);
+    border-color: var(--osc-border);
+    color: var(--osc-primary-dark);
+}
+
+/* ---------- Utilities kept from the default template ---------- */
+.border-top {
+    border-top: 1px solid var(--osc-border) !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--osc-border) !important;
+}
+
+.box-shadow {
+    box-shadow: var(--osc-shadow);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: var(--osc-white);
+    color: var(--osc-muted) !important;
+    border-top: 3px solid var(--osc-primary) !important;
+}
+
+    .footer a {
+        color: var(--osc-primary);
+    }
+
+/* ==========================================================
+   HOME PAGE
+   ========================================================== */
+
+/* ---------- Hero ---------- */
+.osc-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 3rem 2.5rem;
+    border-radius: 1rem;
+    color: var(--osc-white);
+    background: linear-gradient(120deg, var(--osc-primary-dark) 0%, var(--osc-primary) 55%, var(--osc-accent) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+    .osc-hero::after {
+        content: "";
+        position: absolute;
+        right: -80px;
+        top: -80px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+.osc-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+}
+
+.osc-hero h1 {
+    color: var(--osc-white);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.75rem 0;
+}
+
+.osc-hero p {
+    font-size: 1.1rem;
+    opacity: 0.92;
+    margin-bottom: 1.5rem;
+}
+
+.osc-hero-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.25rem 0.85rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.osc-hero-art {
+    position: relative;
+    z-index: 1;
+    font-size: 9rem;
+    line-height: 1;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+.osc-btn-hero {
+    color: var(--osc-primary) !important;
+    font-weight: 600;
+}
+
+    .osc-btn-hero:hover {
+        background-color: var(--osc-primary-light);
+        text-decoration: none;
+    }
+
+/* ---------- Perks strip ---------- */
+.osc-perks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.osc-perk {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1rem;
+    background: var(--osc-primary-light);
+    border-radius: var(--osc-radius);
+}
+
+    .osc-perk > span {
+        font-size: 1.8rem;
+    }
+
+    .osc-perk strong {
+        display: block;
+        color: var(--osc-primary-dark);
+    }
+
+    .osc-perk small {
+        color: var(--osc-muted);
+    }
+
+/* ---------- Section headings ---------- */
+.osc-section {
+    margin-bottom: 2.5rem;
+}
+
+.osc-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--osc-primary-light);
+}
+
+    .osc-section-head h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        position: relative;
+    }
+
+        .osc-section-head h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -0.65rem;
+            width: 50px;
+            height: 3px;
+            background: var(--osc-primary);
+            border-radius: 2px;
+        }
+
+/* ---------- Categories ---------- */
+.osc-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+}
+
+.osc-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 0.5rem;
+    background: var(--osc-white);
+    border: 1px solid var(--osc-border);
+    border-radius: var(--osc-radius);
+    color: var(--osc-primary-dark);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+    .osc-category:hover {
+        background: var(--osc-primary);
+        color: var(--osc-white);
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: var(--osc-shadow);
+    }
+
+.osc-category-icon {
+    font-size: 2.2rem;
+}
+
+/* ---------- Product cards ---------- */
+.osc-product-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background: linear-gradient(135deg, var(--osc-primary-light), #ffffff);
+    border-radius: var(--osc-radius) var(--osc-radius) 0 0;
+}
+
+.osc-product-emoji {
+    font-size: 4.5rem;
+    transition: transform 0.25s ease;
+}
+
+.osc-product:hover .osc-product-emoji {
+    transform: scale(1.12);
+}
+
+.osc-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.15rem 0.6rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--osc-white);
+}
+
+.osc-badge-sale {
+    background: #e53935;
+}
+
+.osc-badge-new {
+    background: var(--osc-primary);
+}
+
+.osc-product-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--osc-text);
+    margin-bottom: 0.5rem;
+}
+
+.osc-price-now {
+    color: var(--osc-primary-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.osc-price-old {
+    margin-left: 0.4rem;
+    color: var(--osc-muted);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+/* ---------- Promo banner ---------- */
+.osc-promo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 1rem;
+    color: var(--osc-white);
+    background: linear-gradient(120deg, var(--osc-primary), var(--osc-accent));
+}
+
+    .osc-promo h2 {
+        color: var(--osc-white);
+        margin-bottom: 0.25rem;
+    }
+
+    .osc-promo p {
+        margin: 0;
+        opacity: 0.92;
+    }
+
+/* ---------- Newsletter ---------- */
+.osc-newsletter {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--osc-primary-light);
+    border-radius: 1rem;
+}
+
+    .osc-newsletter p {
+        color: var(--osc-muted);
+    }
+
+.osc-newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ---------- Home page responsive ---------- */
+@media (max-width: 767.98px) {
+    .osc-hero {
+        padding: 2rem 1.5rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+        .osc-hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .osc-hero .d-flex {
+            justify-content: center;
+        }
+
+    .osc-hero-art {
+        display: none;
+    }
+
+    .osc-promo {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .osc-newsletter-form {
+        flex-direction: column;
+    }
+}
