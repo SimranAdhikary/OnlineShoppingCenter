@@ -1,73 +1,430 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 
     var categories = new[]
     {
-        new { Name = "Electronics", Icon = "💻" },
-        new { Name = "Fashion",     Icon = "👕" },
-        new { Name = "Home & Kitchen", Icon = "🏠" },
-        new { Name = "Beauty",      Icon = "💄" },
-        new { Name = "Sports",      Icon = "⚽" },
-        new { Name = "Books",       Icon = "📚" }
+        new { Name = "Electronics", Image = "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=300&q=80" },
+        new { Name = "Fashion", Image = "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=300&q=80" },
+        new { Name = "Home & Kitchen", Image = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=300&q=80" },
+        new { Name = "Beauty", Image = "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80" },
+        new { Name = "Sports", Image = "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=300&q=80" },
+        new { Name = "Books", Image = "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=300&q=80" }
     };
 
     var products = new[]
     {
-        new { Name = "Wireless Headphones", Price = 3499m, OldPrice = 4999m, Icon = "🎧", Badge = "Sale" },
-        new { Name = "Smart Watch",         Price = 5999m, OldPrice = 0m,    Icon = "⌚", Badge = "New" },
-        new { Name = "Running Shoes",       Price = 2799m, OldPrice = 3499m, Icon = "👟", Badge = "Sale" },
-        new { Name = "Backpack",            Price = 1899m, OldPrice = 0m,    Icon = "🎒", Badge = "" },
-        new { Name = "Coffee Maker",        Price = 4299m, OldPrice = 5299m, Icon = "☕", Badge = "Sale" },
-        new { Name = "Bluetooth Speaker",   Price = 2499m, OldPrice = 0m,    Icon = "🔊", Badge = "New" },
-        new { Name = "Sunglasses",          Price = 999m,  OldPrice = 1499m, Icon = "🕶️", Badge = "Sale" },
-        new { Name = "Desk Lamp",           Price = 1299m, OldPrice = 0m,    Icon = "💡", Badge = "" }
+        new { Name = "Wireless Headphones", Price = 3499m, OldPrice = 4999m, Image = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=85", Badge = "Sale" },
+        new { Name = "Smart Watch", Price = 5999m, OldPrice = 0m, Image = "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=85", Badge = "New" },
+        new { Name = "Running Shoes", Price = 2799m, OldPrice = 3499m, Image = "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=85", Badge = "Sale" },
+        new { Name = "Backpack", Price = 1899m, OldPrice = 0m, Image = "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=85", Badge = "" },
+        new { Name = "Coffee Maker", Price = 4299m, OldPrice = 5299m, Image = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=85", Badge = "Sale" },
+        new { Name = "Bluetooth Speaker", Price = 2499m, OldPrice = 0m, Image = "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=85", Badge = "New" },
+        new { Name = "Sunglasses", Price = 999m, OldPrice = 1499m, Image = "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=85", Badge = "Sale" },
+        new { Name = "Desk Lamp", Price = 1299m, OldPrice = 0m, Image = "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=85", Badge = "" }
     };
 }
 
-<!-- ============ HERO ============ -->
+<style>
+    :root {
+        --navy: #102544;
+        --navy-dark: #09182e;
+        --blue: #174a87;
+        --orange: #f58220;
+        --page-bg: #f4f6f9;
+        --text: #172b4d;
+        --muted: #6b7789;
+        --border: #e4e9f0;
+    }
+
+    body {
+        background: var(--page-bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .osc-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        min-height: 350px;
+        margin: 24px 0;
+        padding: 48px 6%;
+        overflow: hidden;
+        color: white;
+        background: linear-gradient(120deg, var(--navy-dark), var(--navy), #20538b);
+        border-radius: 8px;
+    }
+
+    .osc-hero-content { max-width: 580px; }
+
+    .osc-hero-tag {
+        color: #ffbd80;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+    .osc-hero h1 {
+        margin: 16px 0;
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 750;
+        line-height: 1.15;
+    }
+
+    .osc-hero p {
+        max-width: 440px;
+        color: #d5deeb;
+        line-height: 1.8;
+    }
+
+    .osc-btn-hero {
+        background: var(--orange);
+        color: white;
+        border: none;
+    }
+
+    .osc-btn-hero:hover {
+        background: #dc6c13;
+        color: white;
+    }
+
+    .osc-hero-art {
+        width: 40%;
+        max-width: 420px;
+        height: 260px;
+        background-image: url("https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=85");
+        background-position: center;
+        background-size: cover;
+        border-radius: 8px;
+    }
+
+    .osc-perks {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-bottom: 38px;
+        padding: 20px 8px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+    }
+
+    .osc-perk {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 16px;
+        border-right: 1px solid var(--border);
+    }
+
+    .osc-perk:last-child { border-right: none; }
+
+    .osc-perk > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        background: #edf3fa;
+        color: var(--navy);
+        font-size: 19px;
+    }
+
+    .osc-perk strong, .osc-perk small { display: block; }
+    .osc-perk strong { font-size: 13px; }
+    .osc-perk small { margin-top: 4px; color: var(--muted); font-size: 11px; }
+
+    .osc-section { margin-bottom: 42px; }
+
+    .osc-section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .osc-section-head h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 25px;
+        font-weight: 750;
+    }
+
+    .osc-section-head a {
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .osc-categories {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .osc-category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--text);
+        text-align: center;
+        text-decoration: none;
+        transition: .2s ease;
+    }
+
+    .osc-category:hover {
+        transform: translateY(-3px);
+        border-color: var(--blue);
+        color: var(--blue);
+    }
+
+    .osc-category-icon {
+        display: block;
+        width: 100%;
+        height: 110px;
+        overflow: hidden;
+        border-radius: 5px;
+        background: #f4f6f9;
+    }
+
+    .osc-category-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .osc-category-name {
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .osc-product {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: white;
+        transition: transform .2s, box-shadow .2s;
+    }
+
+    .osc-product:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 22px rgb(16 37 68 / 9%);
+    }
+
+    .osc-product-img {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 210px;
+        padding: 12px;
+        overflow: hidden;
+        background: white;
+        border-bottom: 1px solid #edf0f4;
+    }
+
+    .osc-product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform .25s ease;
+    }
+
+    .osc-product:hover .osc-product-img img {
+        transform: scale(1.05);
+    }
+
+    .osc-badge {
+        position: absolute;
+        z-index: 2;
+        top: 12px;
+        left: 12px;
+        padding: 5px 8px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .osc-badge-sale {
+        background: #fff0e6;
+        color: #c65a0a;
+    }
+
+    .osc-badge-new {
+        background: #e7eef9;
+        color: var(--blue);
+    }
+
+    .osc-product-name {
+        min-height: 38px;
+        margin-bottom: 12px;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .osc-price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .osc-price-now {
+        color: var(--navy);
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .osc-price-old {
+        color: #929baa;
+        font-size: 11px;
+        text-decoration: line-through;
+    }
+
+    .osc-cart-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: auto;
+        padding: 10px 12px;
+        border: 1px solid var(--navy);
+        border-radius: 4px;
+        background: white;
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 700;
+        transition: .2s;
+    }
+
+    .osc-cart-btn:hover {
+        background: var(--navy);
+        color: white;
+    }
+
+    .osc-promo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin: 42px 0;
+        padding: 32px;
+        border-radius: 8px;
+        background: var(--navy);
+        color: white;
+    }
+
+    .osc-promo h2 { font-size: 25px; font-weight: 750; }
+    .osc-promo p { margin-bottom: 0; color: #d5deeb; font-size: 13px; }
+
+    .osc-newsletter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 30px 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .osc-newsletter h2 { color: var(--navy); font-size: 23px; font-weight: 750; }
+    .osc-newsletter p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+
+    .osc-newsletter-form {
+        display: flex;
+        width: min(100%, 430px);
+        gap: 8px;
+    }
+
+    .osc-newsletter-form input { min-width: 0; }
+
+    .osc-newsletter-form button {
+        flex-shrink: 0;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 4px;
+        background: var(--navy);
+        color: white;
+    }
+
+
+</style>
+
+<!-- HERO -->
 <section class="osc-hero">
     <div class="osc-hero-content">
-        <span class="osc-hero-tag">Big Season Sale</span>
-        <h1>Shop smarter at <br />OnlineShoppingCenter</h1>
-        <p>Thousands of products, great prices and fast delivery, all in one place.</p>
+        <span class="osc-hero-tag">YOUR EVERYDAY MARKETPLACE</span>
+        <h1>Shop smarter at<br />OnlineShoppingCenter</h1>
+        <p>Discover quality products, great prices and convenient shopping, all in one place.</p>
+
         <div class="d-flex flex-wrap gap-2">
-            <a href="#featured" class="btn btn-light btn-lg osc-btn-hero">Shop Now</a>
+            <a href="#featured" class="btn btn-light btn-lg osc-btn-hero">Shop Now →</a>
             <a asp-controller="Home" asp-action="Register" class="btn btn-outline-light btn-lg">Create Account</a>
         </div>
     </div>
-    <div class="osc-hero-art" aria-hidden="true">🛍️</div>
+
+    <div class="osc-hero-art" role="img" aria-label="Online shopping collection"></div>
 </section>
 
-<!-- ============ PERKS ============ -->
+<!-- BENEFITS -->
 <section class="osc-perks">
-    <div class="osc-perk"><span>🚚</span><div><strong>Free Delivery</strong><small>On orders over Rs. 3,000</small></div></div>
-    <div class="osc-perk"><span>🔒</span><div><strong>Secure Payment</strong><small>100% protected checkout</small></div></div>
-    <div class="osc-perk"><span>↩️</span><div><strong>Easy Returns</strong><small>7-day return policy</small></div></div>
-    <div class="osc-perk"><span>🎧</span><div><strong>24/7 Support</strong><small>We're always here to help</small></div></div>
+    <div class="osc-perk">
+        <span>↗</span>
+        <div><strong>Free Delivery</strong><small>On orders over Rs. 3,000</small></div>
+    </div>
+    <div class="osc-perk">
+        <span>✓</span>
+        <div><strong>Secure Payment</strong><small>Protected checkout</small></div>
+    </div>
+    <div class="osc-perk">
+        <span>↺</span>
+        <div><strong>Easy Returns</strong><small>7-day return policy</small></div>
+    </div>
+    <div class="osc-perk">
+        <span>24/7</span>
+        <div><strong>Customer Support</strong><small>We're here to help</small></div>
+    </div>
 </section>
 
-<!-- ============ CATEGORIES ============ -->
+<!-- CATEGORIES -->
 <section class="osc-section">
     <div class="osc-section-head">
         <h2>Shop by Category</h2>
     </div>
+
     <div class="osc-categories">
         @foreach (var c in categories)
         {
-            <a href="#" class="osc-category">
-                <span class="osc-category-icon">@c.Icon</span>
-                <span>@c.Name</span>
+            <a href="#featured" class="osc-category">
+                <span class="osc-category-icon">
+                    <img src="@c.Image" alt="@c.Name" loading="lazy" />
+                </span>
+                <span class="osc-category-name">@c.Name</span>
             </a>
         }
     </div>
 </section>
 
-<!-- ============ FEATURED PRODUCTS ============ -->
+<!-- FEATURED PRODUCTS -->
 <section class="osc-section" id="featured">
     <div class="osc-section-head">
         <h2>Featured Products</h2>
-        <a href="#">View all →</a>
+        <a href="#featured">View all →</a>
     </div>
+
     <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4">
         @foreach (var p in products)
         {
@@ -76,20 +433,38 @@
                     <div class="osc-product-img">
                         @if (!string.IsNullOrEmpty(p.Badge))
                         {
-                            <span class="osc-badge @(p.Badge == "Sale" ? "osc-badge-sale" : "osc-badge-new")">@p.Badge</span>
+                            <span class="osc-badge @(p.Badge == "Sale" ? "osc-badge-sale" : "osc-badge-new")">
+                                @p.Badge
+                            </span>
                         }
-                        <span class="osc-product-emoji">@p.Icon</span>
+
+                        <img src="@p.Image"
+                             alt="@p.Name"
+                             loading="lazy" />
                     </div>
+
                     <div class="card-body d-flex flex-column">
                         <h3 class="osc-product-name">@p.Name</h3>
-                        <div class="osc-price mb-3">
+
+                        <div class="osc-price mb-2">
                             <span class="osc-price-now">Rs. @p.Price.ToString("N0")</span>
+
                             @if (p.OldPrice > 0)
                             {
                                 <span class="osc-price-old">Rs. @p.OldPrice.ToString("N0")</span>
                             }
                         </div>
-                        <button type="button" class="btn btn-primary mt-auto w-100">Add to Cart</button>
+
+                        @if (p.OldPrice > p.Price)
+                        {
+                            <small class="mb-3" style="color:#c65a0a;font-weight:700">
+                                @($"{Math.Round((p.OldPrice - p.Price) / p.OldPrice * 100)}% OFF")
+                            </small>
+                        }
+
+                        <button type="button" class="osc-cart-btn">
+                            Add to Cart <span>+</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -97,21 +472,33 @@
     </div>
 </section>
 
-<!-- ============ PROMO BANNER ============ -->
+<!-- PROMOTION -->
 <section class="osc-promo">
     <div>
         <h2>Get 10% off your first order</h2>
-        <p>Register today and enjoy exclusive deals made for new members.</p>
+        <p>Register today and discover exclusive offers for new members.</p>
     </div>
-    <a asp-controller="Home" asp-action="Register" class="btn btn-light btn-lg osc-btn-hero">Register Now</a>
+
+    <a asp-controller="Home" asp-action="Register"
+       class="btn btn-light btn-lg osc-btn-hero">
+        Register Now →
+    </a>
 </section>
 
-<!-- ============ NEWSLETTER ============ -->
+<!-- NEWSLETTER -->
 <section class="osc-newsletter">
-    <h2>Stay in the loop</h2>
-    <p>Subscribe for new arrivals and special offers.</p>
+    <div>
+        <h2>Stay in the loop</h2>
+        <p>Subscribe for new arrivals and special offers.</p>
+    </div>
+
     <form class="osc-newsletter-form" onsubmit="return false;">
-        <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" />
-        <button type="submit" class="btn btn-primary">Subscribe</button>
+        <input type="email"
+               class="form-control"
+               placeholder="Enter your email address"
+               aria-label="Email address"
+               required />
+
+        <button type="submit">Subscribe →</button>
     </form>
 </section>

@@ -1,0 +1,105 @@
+/* CSS for SignIn view */
+
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 24px 12px;
+}
+
+.signin-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #d8e1ed;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(11, 35, 71, 0.10);
+}
+
+    .signin-card h2 {
+        margin: 0;
+        color: #0b2347;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+.signin-subtitle {
+    margin: 7px 0 22px;
+    color: #66758a;
+    text-align: center;
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        color: #1b2738;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+.form-control {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+    .form-control:focus {
+        border-color: #173b70;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(23, 59, 112, 0.12);
+    }
+
+.remember-row {
+    margin-bottom: 16px;
+    color: #66758a;
+    font-size: 13px;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 11px;
+    color: #fff;
+    background: #173b70;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .signin-btn:hover {
+        background: #0b2347;
+    }
+
+.register-text {
+    margin: 18px 0 0;
+    color: #66758a;
+    text-align: center;
+    font-size: 13px;
+}
+
+    .register-text a {
+        color: #173b70;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+.text-danger {
+    color: #c62828;
+    font-size: 12px;
+}
