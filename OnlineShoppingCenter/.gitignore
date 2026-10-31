@@ -1,0 +1,69 @@
+## .NET / Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vs/
+.vs/
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nupkg
+**/packages/repositories.config
+
+## ASP.NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+ScaffoldingReadMe.txt
+
+## User-specific files
+*.rsuser
+*.pidb
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+
+## Publish profiles
+*.pubxml
+!**/Properties/PublishProfiles/*.pubxml
+
+## appsettings overrides
+appsettings.Development.json
+
+## Uploaded files
+**/wwwroot/uploads/
+
+## EF Core migrations snapshots (keep migrations, ignore designer large files if desired)
+
+## OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## VS Code
+.vscode/
+
+## Cursor
+.cursor/
+agent-transcripts/
+mcps/
+terminals/

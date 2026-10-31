@@ -1,0 +1,28 @@
+@model dynamic
+
+@{
+    int pageIndex = Model.PageIndex;
+    int totalPages = Model.TotalPages;
+    bool hasPrev = Model.HasPreviousPage;
+    bool hasNext = Model.HasNextPage;
+}
+
+@if (totalPages > 1)
+{
+    <nav>
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(hasPrev ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(pageIndex - 1)">Previous</a>
+            </li>
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == pageIndex ? "active" : "")">
+                    <a class="page-link" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(hasNext ? "" : "disabled")">
+                <a class="page-link" asp-route-page="@(pageIndex + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
+}

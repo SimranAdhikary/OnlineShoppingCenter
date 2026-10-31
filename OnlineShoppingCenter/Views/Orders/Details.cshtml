@@ -1,0 +1,98 @@
+@model OnlineShoppingCenter.ViewModels.Orders.OrderDetailsVM
+@{
+    ViewData["Title"] = $"Order #{Model.Order.Id}";
+}
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index" class="text-decoration-none">My Orders</a></li>
+        <li class="breadcrumb-item active">Order #@Model.Order.Id</li>
+    </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold mb-0">Order #@Model.Order.Id</h2>
+    @{
+        var badgeClass = Model.Order.Status switch
+        {
+            "Pending" => "bg-warning-subtle text-warning-emphasis",
+            "Processing" => "bg-info-subtle text-info-emphasis",
+            "Shipped" => "bg-primary-subtle text-primary-emphasis",
+            "Delivered" => "bg-success-subtle text-success-emphasis",
+            "Cancelled" => "bg-danger-subtle text-danger-emphasis",
+            _ => "bg-secondary-subtle text-secondary-emphasis"
+        };
+    }
+    <span class="badge status-badge fs-6 @badgeClass">@Model.Order.Status</span>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="card-body p-4">
+                <h5 class="fw-bold mb-3">Order Items</h5>
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Unit Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Order.Items)
+                            {
+                                <tr>
+                                    <td class="fw-semibold">@item.Product.Name</td>
+                                    <td class="text-muted">$@item.UnitPrice.ToString("F2")</td>
+                                    <td>@item.Quantity</td>
+                                    <td class="fw-bold">$@((item.UnitPrice * item.Quantity).ToString("F2"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr class="border-top-2">
+                                <td colspan="3" class="text-end fw-bold fs-5">Total:</td>
+                                <td class="fw-bold text-primary fs-5">$@Model.Order.TotalAmount.ToString("F2")</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-body p-4">
+                <h6 class="fw-bold mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="me-2 mb-1 text-primary"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>
+                    Shipping Address
+                </h6>
+                <p class="mb-1">@Model.Order.Address.Street</p>
+                <p class="mb-1">@Model.Order.Address.City, @Model.Order.Address.State @Model.Order.Address.ZipCode</p>
+                <p class="mb-0">@Model.Order.Address.Country</p>
+            </div>
+        </div>
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4">
+                <h6 class="fw-bold mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="me-2 mb-1 text-primary"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg>
+                    Timeline
+                </h6>
+                <p class="mb-1 text-muted small">Placed</p>
+                <p class="mb-3 fw-semibold">@Model.Order.CreatedAt.ToString("MMM dd, yyyy  HH:mm")</p>
+                <p class="mb-1 text-muted small">Last Updated</p>
+                <p class="mb-0 fw-semibold">@Model.Order.UpdatedAt.ToString("MMM dd, yyyy  HH:mm")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="btn btn-outline-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" class="me-1 mb-1"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>
+        Back to Orders
+    </a>
+</div>

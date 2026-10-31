@@ -1,0 +1,75 @@
+@model OnlineShoppingCenter.Models.Product
+@{
+    ViewData["Title"] = "Delete Product";
+    var hasOrders = Model.OrderItems.Any();
+    var hasCartItems = Model.CartItems.Any();
+    var fileCount = Model.Files.Count;
+}
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Admin/Products/Index" class="text-decoration-none">Products</a></li>
+        <li class="breadcrumb-item active">Delete</li>
+    </ol>
+</nav>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4 text-center">
+                @if (hasOrders)
+                {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="text-warning mb-3"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+                    <h4 class="fw-bold text-warning mb-3">Cannot Delete</h4>
+                    <p class="text-muted mb-3">
+                        <strong>@Model.Name</strong> is referenced by <strong>@Model.OrderItems.Count order(s)</strong>.
+                        Products with order history cannot be deleted to preserve data integrity.
+                    </p>
+                    <a href="/Admin/Products/Index" class="btn btn-outline-secondary">Back to Products</a>
+                }
+                else
+                {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="text-danger mb-3"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/><path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/></svg>
+                    <h4 class="fw-bold mb-3">Delete Product?</h4>
+                    <p class="text-muted mb-3">You are about to permanently delete:</p>
+
+                    <div class="text-start bg-light rounded-3 p-3 mb-3">
+                        <dl class="row mb-0">
+                            <dt class="col-sm-4">Name</dt>
+                            <dd class="col-sm-8">@Model.Name</dd>
+                            <dt class="col-sm-4">Category</dt>
+                            <dd class="col-sm-8">@Model.Category.Name</dd>
+                            <dt class="col-sm-4">Price</dt>
+                            <dd class="col-sm-8">$@Model.Price.ToString("F2")</dd>
+                            <dt class="col-sm-4">Stock</dt>
+                            <dd class="col-sm-8">@Model.Stock</dd>
+                        </dl>
+                    </div>
+
+                    @if (fileCount > 0 || hasCartItems)
+                    {
+                        <div class="alert alert-warning text-start small mb-3">
+                            <strong>This will also remove:</strong>
+                            <ul class="mb-0 mt-1">
+                                @if (fileCount > 0)
+                                {
+                                    <li>@fileCount uploaded file(s)</li>
+                                }
+                                @if (hasCartItems)
+                                {
+                                    <li>This product from @Model.CartItems.Count user cart(s)</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <form asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-flex justify-content-center gap-2">
+                        @Html.AntiForgeryToken()
+                        <a href="/Admin/Products/Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                        <button type="submit" class="btn btn-danger px-4">Delete Product</button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>

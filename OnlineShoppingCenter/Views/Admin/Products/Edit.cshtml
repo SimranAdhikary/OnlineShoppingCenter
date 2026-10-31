@@ -1,0 +1,76 @@
+@model OnlineShoppingCenter.ViewModels.Admin.ProductFormVM
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<h2 class="mb-4">Edit Product</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Price" class="form-label"></label>
+                    <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Stock" class="form-label"></label>
+                    <input asp-for="Stock" class="form-control" type="number" />
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="CategoryId" class="form-label"></label>
+                    <select asp-for="CategoryId" asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(Model.Categories, "Id", "Name"))" class="form-select"></select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+
+            @if (Model.ExistingFiles.Any())
+            {
+                <div class="mb-3">
+                    <label class="form-label">Current Files</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach (var file in Model.ExistingFiles)
+                        {
+                            @if (file.Type == "image")
+                            {
+                                <img src="@file.Path" alt="@file.OriginalName" class="rounded border" style="width: 100px; height: 100px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <div class="border rounded p-2 text-center" style="width: 100px;">
+                                    <small>@file.OriginalName</small>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div class="form-text">Uploading new files will replace all existing ones.</div>
+                </div>
+            }
+
+            <div class="mb-3">
+                <label class="form-label">Upload New Files (replaces existing)</label>
+                <input type="file" name="Files" class="form-control" multiple accept=".jpg,.jpeg,.png,.gif,.webp,.mp4,.webm" />
+                <div class="form-text">Max 5 MB for images, 50 MB for videos.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

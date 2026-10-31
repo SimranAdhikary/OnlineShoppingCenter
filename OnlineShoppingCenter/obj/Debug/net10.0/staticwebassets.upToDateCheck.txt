@@ -61,65 +61,67 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\LICENSE.txt
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.slim.min.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.slim.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.slim.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.min.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\LICENSE.md
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\additional-methods.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\js\site.js
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\css\site.css
-D:\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\favicon.ico
+wwwroot\uploads\product\1\30f98c05-d620-4323-ae96-4856eeefdf65.jpg
+wwwroot\uploads\product\2\4d2b8a01-439b-4474-a8f2-652ff3e42dba.jpeg
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\css\site.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\favicon.ico
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\js\site.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\additional-methods.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery-validation\LICENSE.md
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.min.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.slim.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.slim.min.js
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\dist\jquery.slim.min.map
+D:\College Projects\OnlineShoppingCenter\OnlineShoppingCenter\wwwroot\lib\jquery\LICENSE.txt

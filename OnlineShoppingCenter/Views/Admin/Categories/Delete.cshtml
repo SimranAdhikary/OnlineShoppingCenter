@@ -1,0 +1,44 @@
+@model OnlineShoppingCenter.Models.Category
+@{
+    ViewData["Title"] = "Delete Category";
+    var hasProducts = Model.Products.Any();
+}
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Admin/Categories/Index" class="text-decoration-none">Categories</a></li>
+        <li class="breadcrumb-item active">Delete</li>
+    </ol>
+</nav>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4 text-center">
+                @if (hasProducts)
+                {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="text-warning mb-3"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+                    <h4 class="fw-bold text-warning mb-3">Cannot Delete</h4>
+                    <p class="text-muted mb-3">
+                        <strong>@Model.Name</strong> has <strong>@Model.Products.Count product(s)</strong> assigned to it.
+                        You must remove or reassign all products before deleting this category.
+                    </p>
+                    <a href="/Admin/Categories/Index" class="btn btn-outline-secondary">Back to Categories</a>
+                }
+                else
+                {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="text-danger mb-3"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/><path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/></svg>
+                    <h4 class="fw-bold mb-3">Delete Category?</h4>
+                    <p class="text-muted mb-1">You are about to permanently delete:</p>
+                    <h5 class="fw-bold mb-1">@Model.Name</h5>
+                    <p class="text-muted small mb-4">@(Model.Description ?? "No description")</p>
+                    <form asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-flex justify-content-center gap-2">
+                        @Html.AntiForgeryToken()
+                        <a href="/Admin/Categories/Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                        <button type="submit" class="btn btn-danger px-4">Delete Category</button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>

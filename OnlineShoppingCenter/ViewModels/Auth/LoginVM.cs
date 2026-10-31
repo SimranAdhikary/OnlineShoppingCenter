@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
-namespace OnlineShoppingCenter.Models
+namespace OnlineShoppingCenter.ViewModels.Auth
 {
-    public class SignInViewModel
+    public class LoginVM
     {
         [Required]
         [EmailAddress]
@@ -12,6 +12,7 @@ namespace OnlineShoppingCenter.Models
         [DataType(DataType.Password)]
         public string Password { get; set; } = string.Empty;
 
+        [Display(Name = "Remember me")]
         public bool RememberMe { get; set; }
     }
 }

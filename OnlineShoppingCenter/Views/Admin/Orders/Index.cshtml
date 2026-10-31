@@ -1,0 +1,53 @@
+@model OnlineShoppingCenter.ViewModels.Admin.AdminOrderVM
+@{
+    ViewData["Title"] = "Manage Orders";
+}
+
+<h2 class="mb-4">Orders</h2>
+
+<div class="mb-3">
+    <form method="get" class="d-flex gap-2">
+        <select name="status" class="form-select" style="width: 200px;">
+            <option value="">All Statuses</option>
+            @foreach (var s in OnlineShoppingCenter.ViewModels.Admin.AdminOrderVM.Statuses)
+            {
+                <option value="@s" selected="@(Model.StatusFilter == s)">@s</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-outline-primary">Filter</button>
+    </form>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Customer</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders.Items)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.User.FirstName @order.User.LastName</td>
+                    <td>@order.Items.Count</td>
+                    <td>$@order.TotalAmount.ToString("F2")</td>
+                    <td><span class="badge bg-secondary">@order.Status</span></td>
+                    <td>@order.CreatedAt.ToString("MMM dd, yyyy")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@order.Id" class="btn btn-sm btn-outline-primary">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<partial name="_Pagination" model="Model.Orders" />

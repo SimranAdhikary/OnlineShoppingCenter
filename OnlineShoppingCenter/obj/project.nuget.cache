@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fpxCV3EhKuA=",
+  "dgSpecHash": "n/HmZKuK5l8=",
   "success": true,
-  "projectFilePath": "D:\\OnlineShoppingCenter\\OnlineShoppingCenter\\OnlineShoppingCenter.csproj",
+  "projectFilePath": "D:\\College Projects\\OnlineShoppingCenter\\OnlineShoppingCenter\\OnlineShoppingCenter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simua\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\simua\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",

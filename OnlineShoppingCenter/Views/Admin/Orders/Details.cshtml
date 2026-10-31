@@ -1,0 +1,74 @@
+@model OnlineShoppingCenter.ViewModels.Orders.OrderDetailsVM
+@{
+    ViewData["Title"] = $"Order #{Model.Order.Id}";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Order #@Model.Order.Id</h2>
+    <form asp-action="UpdateStatus" method="post" class="d-flex gap-2">
+        <input type="hidden" name="id" value="@Model.Order.Id" />
+        <select name="status" class="form-select" style="width: 180px;">
+            @foreach (var s in OnlineShoppingCenter.ViewModels.Admin.AdminOrderVM.Statuses)
+            {
+                <option value="@s" selected="@(Model.Order.Status == s)">@s</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Items</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Unit Price</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Order.Items)
+                        {
+                            <tr>
+                                <td>@item.Product.Name</td>
+                                <td>$@item.UnitPrice.ToString("F2")</td>
+                                <td>@item.Quantity</td>
+                                <td>$@((item.UnitPrice * item.Quantity).ToString("F2"))</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-end fw-bold">Total:</td>
+                            <td class="fw-bold text-primary">$@Model.Order.TotalAmount.ToString("F2")</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Customer</h5>
+                <p class="mb-1">@Model.Order.User.FirstName @Model.Order.User.LastName</p>
+                <p class="mb-0 text-muted">@Model.Order.User.Email</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Shipping Address</h5>
+                <p class="mb-1">@Model.Order.Address.Street</p>
+                <p class="mb-1">@Model.Order.Address.City, @Model.Order.Address.State @Model.Order.Address.ZipCode</p>
+                <p class="mb-0">@Model.Order.Address.Country</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a asp-action="Index" class="btn btn-outline-secondary">Back to Orders</a>

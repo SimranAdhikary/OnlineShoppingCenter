@@ -1,0 +1,38 @@
+@model List<OnlineShoppingCenter.Models.Category>
+@{
+    ViewData["Title"] = "Manage Categories";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Categories</h2>
+    <a asp-action="Create" class="btn btn-primary">Add Category</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cat in Model)
+            {
+                <tr>
+                    <td>@cat.Id</td>
+                    <td>@cat.Name</td>
+                    <td>@(cat.Description ?? "-")</td>
+                    <td>@cat.CreatedAt.ToString("MMM dd, yyyy")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@cat.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@cat.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
