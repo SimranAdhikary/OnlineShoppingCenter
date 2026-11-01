@@ -86,7 +86,7 @@ namespace OnlineShoppingCenter.Controllers
                     Country = model.Country
                 };
 
-                var order = await _orderRepo.CheckoutAsync(userId, address);
+                var order = await _orderRepo.CheckoutAsync(userId, address, $"{Request.Scheme}://{Request.Host}");
                 TempData["Success"] = "Order placed successfully!";
                 return RedirectToAction("Details", new { id = order.Id });
             }

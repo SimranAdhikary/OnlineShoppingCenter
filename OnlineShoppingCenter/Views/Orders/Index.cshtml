@@ -39,7 +39,7 @@ else
                             <td class="ps-4 fw-semibold">#@order.Id</td>
                             <td class="text-muted">@order.CreatedAt.ToString("MMM dd, yyyy")</td>
                             <td>@order.Items.Count items</td>
-                            <td class="fw-bold text-primary">$@order.TotalAmount.ToString("F2")</td>
+                            <td class="fw-bold text-primary">Rs. @order.TotalAmount.ToString("F2")</td>
                             <td>
                                 @{
                                     var badgeClass = order.Status switch

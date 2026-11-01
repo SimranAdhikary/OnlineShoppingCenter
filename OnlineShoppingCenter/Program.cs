@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OnlineShoppingCenter.Data;
 using OnlineShoppingCenter.Models;
 using OnlineShoppingCenter.Repositories;
 using OnlineShoppingCenter.Repositories.Interfaces;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using OnlineShoppingCenter.Services;
 
 namespace OnlineShoppingCenter
 {
@@ -37,6 +38,14 @@ namespace OnlineShoppingCenter
                 options.AccessDeniedPath = "/Auth/AccessDenied";
                 options.ExpireTimeSpan = TimeSpan.FromDays(7);
             });
+
+            // Configure Brevo settings
+            builder.Services.Configure<BrevoSettings>(
+                builder.Configuration.GetSection("BrevoSettings")
+            );
+
+            // Register EmailService
+            builder.Services.AddScoped<EmailService>();
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

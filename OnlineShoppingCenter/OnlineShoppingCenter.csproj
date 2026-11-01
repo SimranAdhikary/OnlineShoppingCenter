@@ -5,14 +5,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	<RootNamespace>OnlineShoppingCenter</RootNamespace>
+	<UserSecretsId>f90b32f4-5198-479b-bc95-cd40c50ccfcc</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+	<PackageReference Include="RestSharp" Version="114.1.0" />
 	<PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.14" />
 	<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.14" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.14" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.14" >
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.14">
 
 		  <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

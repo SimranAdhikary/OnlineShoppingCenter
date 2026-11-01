@@ -1,5 +1,8 @@
-using OnlineShoppingCenter.Models;
+
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OnlineShoppingCenter.Models;
+using OnlineShoppingCenter.Data;
 using System.Diagnostics;
 
 namespace OnlineShoppingCenter.Controllers

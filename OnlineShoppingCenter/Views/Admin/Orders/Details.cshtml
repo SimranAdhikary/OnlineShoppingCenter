@@ -36,16 +36,16 @@
                         {
                             <tr>
                                 <td>@item.Product.Name</td>
-                                <td>$@item.UnitPrice.ToString("F2")</td>
+                                <td>Rs. @item.UnitPrice.ToString("F2")</td>
                                 <td>@item.Quantity</td>
-                                <td>$@((item.UnitPrice * item.Quantity).ToString("F2"))</td>
+                                <td>Rs. @((item.UnitPrice * item.Quantity).ToString("F2"))</td>
                             </tr>
                         }
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="3" class="text-end fw-bold">Total:</td>
-                            <td class="fw-bold text-primary">$@Model.Order.TotalAmount.ToString("F2")</td>
+                            <td class="fw-bold text-primary">Rs. @Model.Order.TotalAmount.ToString("F2")</td>
                         </tr>
                     </tfoot>
                 </table>

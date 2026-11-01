@@ -48,7 +48,7 @@ else
                                     <span class="fw-semibold">@item.ProductName</span>
                                 </div>
                             </td>
-                            <td class="text-muted">$@item.UnitPrice.ToString("F2")</td>
+                            <td class="text-muted">Rs. @item.UnitPrice.ToString("F2")</td>
                             <td>
                                 <form asp-action="Update" method="post" class="d-flex align-items-center gap-2">
                                     @Html.AntiForgeryToken()
@@ -58,7 +58,7 @@ else
                                     <button type="submit" name="quantity" value="@(item.Quantity + 1)" class="btn btn-outline-secondary qty-btn" @(item.Quantity >= item.Stock ? "disabled" : "")>+</button>
                                 </form>
                             </td>
-                            <td class="fw-bold text-primary">$@item.Subtotal.ToString("F2")</td>
+                            <td class="fw-bold text-primary">Rs. @item.Subtotal.ToString("F2")</td>
                             <td class="pe-4">
                                 <form asp-action="Remove" method="post">
                                     @Html.AntiForgeryToken()
@@ -80,7 +80,7 @@ else
                 <div class="d-flex align-items-center gap-4">
                     <div class="text-end">
                         <span class="text-muted d-block">Total</span>
-                        <span class="fs-4 fw-bold text-primary">$@Model.Total.ToString("F2")</span>
+                        <span class="fs-4 fw-bold text-primary">Rs. @Model.Total.ToString("F2")</span>
                     </div>
                     <a asp-controller="Orders" asp-action="Checkout" class="btn btn-primary btn-lg px-4">
                         Proceed to Checkout

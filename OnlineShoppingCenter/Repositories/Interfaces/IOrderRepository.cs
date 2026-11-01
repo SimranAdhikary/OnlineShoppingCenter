@@ -5,7 +5,7 @@ namespace OnlineShoppingCenter.Repositories.Interfaces
 {
     public interface IOrderRepository
     {
-        Task<Order> CheckoutAsync(int userId, Address shippingAddress);
+        Task<Order> CheckoutAsync(int userId, Address shippingAddress, string baseUrl);
         Task<PaginatedList<Order>> GetUserOrdersAsync(int userId, int page, int pageSize);
         Task<Order?> GetOrderDetailsAsync(int orderId, int userId);
         Task<PaginatedList<Order>> GetAllOrdersAsync(string? status, int page, int pageSize);

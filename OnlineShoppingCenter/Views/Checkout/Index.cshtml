@@ -71,13 +71,13 @@
                                 <span class="fw-semibold">@item.ProductName</span>
                                 <span class="text-muted ms-1">x @item.Quantity</span>
                             </div>
-                            <span class="fw-semibold">$@item.Subtotal.ToString("F2")</span>
+                            <span class="fw-semibold">Rs. @item.Subtotal.ToString("F2")</span>
                         </div>
                     }
                     <hr />
                     <div class="d-flex justify-content-between fw-bold fs-5">
                         <span>Total</span>
-                        <span class="text-primary">$@Model.Cart.Total.ToString("F2")</span>
+                        <span class="text-primary">Rs. @Model.Cart.Total.ToString("F2")</span>
                     </div>
                 }
             </div>

@@ -42,7 +42,7 @@
                             <option value="name" selected="@(Model.SortBy == "name")">Name</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-dark w-100">Apply Filters</button>
+                    <button type="submit" class="btn apply-filter-btn w-100">Apply Filters</button>
                 </form>
             </div>
         </div>
@@ -79,7 +79,7 @@
                                     <span class="product-category mb-1">@product.Category.Name</span>
                                     <h6 class="card-title text-dark mb-2">@product.Name</h6>
                                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                                        <span class="product-price">$@product.Price.ToString("F2")</span>
+                                        <span class="product-price">Rs. @product.Price.ToString("F2")</span>
                                         @if (product.Stock > 0)
                                         {
                                             <span class="badge bg-success-subtle text-success badge-stock">In Stock</span>
