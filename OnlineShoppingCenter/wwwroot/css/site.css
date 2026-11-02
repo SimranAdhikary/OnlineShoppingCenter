@@ -80,6 +80,8 @@ html {
 }
 
 .table th {
+    color: #ffffff;
+    background-color: #110b55 !important;
     font-weight: 600;
     font-size: 0.85rem;
     text-transform: uppercase;

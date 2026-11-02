@@ -74,7 +74,7 @@ namespace OnlineShoppingCenter.Repositories
                     _context.OrderItems.Add(orderItem);
                     cartItem.Product.Stock -= cartItem.Quantity;
                 }
-                SendConfirmation(order, cart.Items, currentUser, baseUrl);
+                //SendConfirmation(order, cart.Items, currentUser, baseUrl);
 
                 _context.CartItems.RemoveRange(cart.Items);
                 await _unitOfWork.SaveChangesAsync();
